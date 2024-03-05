@@ -10,6 +10,7 @@ view: order_items {
 
   dimension: id {
     primary_key: yes
+    hidden: yes
     type: number
     sql: ${TABLE}.id ;;
   }
@@ -61,9 +62,7 @@ view: order_items {
   measure: total_sale_price {
     type: sum
     sql: ${sale_price} ;;  }
-  measure: average_sale_price {
-    type: average
-    sql: ${sale_price} ;;  }
+
 
   dimension_group: shipped {
     type: time
@@ -79,6 +78,7 @@ view: order_items {
   }
 
   dimension: user_id {
+    hidden: yes
     type: number
     sql: ${TABLE}.user_id ;;
   }
